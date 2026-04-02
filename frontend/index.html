@@ -2,26 +2,93 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Hasan Syed</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasan Syed Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #0a0a0a;
-      color: #ffffff;
-      font-family: 'Optima', sans-serif;
+    /* Custom colors and fonts */
+    :root {
+      --bg-mocha: #000000;     /* Darker mocha */
+      --text-creamy: #ffffff;  /* Creamy brown */
+      --accent-blue: #b0a082;  /* Accent color for buttons/links */
     }
-    h1 {
-      font-size: 8rem;
-      letter-spacing: 8px;
+    body {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     }
   </style>
 </head>
-<body>
-  <h1>As-Salaamu Alaikum, Friend</h1>
-  <h2>ٱلسَّلَامُ عَلَيْكُمْ</h2>
+<body class="bg-[var(--bg-mocha)] text-[var(--text-creamy)]">
+
+  <!-- HERO SECTION -->
+  <section class="flex flex-col justify-start items-center text-center px-4 pt-20">
+    <h1 class="text-4xl md:text-4xl font-bold mb-4">Hasan Syed</h1>
+    <p class="text-[var(--text-creamy)] text-lg md:text-xl mb-6">Backend + Cloud Developer | CS Student @ ASU</p>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-4">About Me</h2>
+    <p class="text-[var(--text-creamy)] text-lg">
+      I’m a Computer Science student at ASU with a strong focus on backend and cloud development. I enjoy building scalable systems, deploying serverless solutions, and automating infrastructure with Terraform. 
+    </p>
+  </section>
+
+  <!-- PROJECTS SECTION -->
+  <section id="projects" class="py-20 px-6">
+    <h2 class="text-3xl font-semibold text-center mb-12">Projects</h2>
+
+    <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+
+      <!-- Project 1 -->
+      <div class="bg-[#4a3b3b] p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+        <h3 class="text-2xl font-bold mb-2">Serverless Personal Portfolio</h3>
+        <p class="text-[var(--text-creamy)] mb-4">
+          Static website hosted on AWS S3 + CloudFront with backend logic in Lambda. Deployed using Terraform (IaC). 
+        </p>
+        <a href="https://github.com/hasansyedCS/hasansyed.dev" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="bg-[#4a3b3b] p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+        <h3 class="text-2xl font-bold mb-2">Backend API Project</h3>
+        <p class="text-[var(--text-creamy)] mb-4">
+          RESTful API deployed on AWS with DynamoDB backend, Lambda functions, and serverless architecture.
+        </p>
+        <a href="#" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="bg-[#4a3b3b] p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+        <h3 class="text-2xl font-bold mb-2">Project Name</h3>
+        <p class="text-[var(--text-creamy)] mb-4">
+          Short description of another deployed backend/cloud project.
+        </p>
+        <a href="#" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- RESUME SECTION -->
+  <section id="resume" class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-6">Resume</h2>
+    <a href="assets/resume.pdf" target="_blank" class="bg-[var(--accent-blue)] hover:bg-blue-500 text-white px-6 py-3 rounded-lg transition">
+      Download PDF
+    </a>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="py-20 px-6 text-center">
+    <h2 class="text-3xl font-semibold mb-6">Contact Me</h2>
+    <p class="mb-4">Email: <a href="mailto:hasansyed730@gmail.com" class="text-[var(--accent-blue)] hover:underline">hasansyed730@gmail.com</a></p>
+    <p class="mb-4">GitHub: <a href="https://github.com/hasansyedCS" class="text-[var(--accent-blue)] hover:underline" target="_blank">github.com/hasansyedCS</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/hasansyedCS" class="text-[var(--accent-blue)] hover:underline" target="_blank">linkedin.com/in/hasansyedCS</a></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-6 text-center text-[var(--text-creamy)] text-sm">
+    &copy; 2026 Hasan Syed. All rights reserved.
+  </footer>
+
 </body>
 </html>
