@@ -71,7 +71,7 @@ graph TD
 - **Monthly cost:** ~$0.50 (within Free Tier)
 
 
-## 📬 Connect
+## Connect
 
 - Live: [hasansyed.dev](https://hasansyed.dev)
 - GitHub: [hasansyedCS](https://github.com/hasansyedCS)
