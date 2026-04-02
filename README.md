@@ -70,14 +70,6 @@ graph TD
 - **Availability:** 99.9%
 - **Monthly cost:** ~$0.50 (within Free Tier)
 
-## Repository Structure
-
-hasansyed.dev/
-├── frontend/
-├── backend/
-├── infrastructure/
-├── .github/workflows/
-└── README.md
 
 ## 📬 Connect
 
