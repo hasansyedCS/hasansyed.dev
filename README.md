@@ -70,6 +70,18 @@ graph TD
 - **Availability:** 99.9%
 - **Monthly cost:** ~$0.50 (within Free Tier)
 
+## Key Design Decisions & Tradeoffs
+
+I intentionally kept the project focused on cloud infrastructure and serverless patterns rather than frontend complexity. Here are the main tradeoffs I made:
+
+- **Static HTML/CSS/JS vs. React/Next.js**: Chose plain HTML for the frontend to keep the site extremely lightweight (<100 ms global latency) and cheap to host. A modern framework would have added unnecessary bundle size and cold-start overhead for a simple portfolio.
+- **Serverless (Lambda + DynamoDB) vs. containers/EC2**: Serverless was ideal for a low-traffic site — automatic scaling, near-zero idle cost (~$0.50/month), and full Terraform management. Tradeoff is occasional cold starts (mitigated by CloudFront caching the static content).
+- **Single-table DynamoDB design**: Used a simple single table with a partition key for the visitor count to minimize cost and complexity. For higher-scale analytics this would evolve into a more normalized schema.
+- **Origin Access Control (OAC) + private S3**: Prioritized security by completely disabling public S3 access. This added a few extra Terraform steps but eliminates a common misconfiguration risk.
+- **No advanced monitoring/alarms yet**: Focused first on getting a fully working, automated deployment pipeline. Next steps would include CloudWatch alarms and basic analytics on the visitor counter.
+- **Cost-first mindset**: Every decision (static hosting, serverless, minimal services) was made to stay well under the AWS Free Tier while still demonstrating production-grade practices.
+
+These choices reflect the reality of building a real-world cloud project as a student: ship fast, stay secure, keep costs near zero, and prioritize the infrastructure above overcomplicating features.
 
 ## Connect
 
