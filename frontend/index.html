@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hasan Syed Portfolio</title>
+  <title>Hasan Syed | Backend + Cloud Engineer</title>
 
   <meta property="og:title" content="Hasan Syed | Backend + Cloud Engineer">
   <meta property="og:description" content="Portfolio of Hasan Syed: Backend & Cloud Engineer, CS Student @ ASU. Check out my projects and resume.">
@@ -20,24 +20,62 @@
       --text-creamy: #ffffff;  /* Creamy brown */
       --accent-blue: #b0a082;  /* Accent color for buttons/links */
     }
+    
     body {
       font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* Stars container - fixed background */
+    .stars-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;  /* Allows clicking through stars */
+      z-index: -1;           /* Places stars behind content */
+    }
+
+    /* Individual star */
+    .star {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+      transition: all 0.2s ease;
+      pointer-events: auto;   /* Allows hover detection */
+    }
+
+    /* Glow effect on hover */
+    .star:hover {
+      background-color: #ffcc00;
+      box-shadow: 0 0 15px 5px rgba(255, 204, 0, 0.8);
+      transform: scale(1.5);
     }
   </style>
 </head>
 <body class="bg-[var(--bg-mocha)] text-[var(--text-creamy)]">
 
+  <!-- Stars Container -->
+  <div class="stars-container"></div>
+
   <!-- HERO SECTION -->
   <section class="flex flex-col justify-start items-center text-center px-4 pt-20">
     <h1 class="text-4xl md:text-4xl font-bold mb-4">Hasan Syed</h1>
     <p class="text-[var(--text-creamy)] text-lg md:text-xl mb-6">Backend + Cloud Engineer | CS Student @ ASU</p>
+    
+    <!-- Visitor Counter Display -->
+    <div class="mt-4 text-sm opacity-75">
+      🌟 Visitor count: <span id="visitor-count">Loading...</span>
+    </div>
   </section>
 
   <!-- ABOUT SECTION -->
   <section id="about" class="py-20 px-6 max-w-3xl mx-auto text-center">
     <h2 class="text-3xl font-semibold mb-4">About Me</h2>
     <p class="text-[var(--text-creamy)] text-lg">
-      Computer Science student at ASU building backend systems and cloud infrastructure with a focus on serverless architectures, infrastructure as code, and reliable APIs. I enjoy turning personal interests into production-grade projects. Outside of coding, I’m into language learning, fitness, nutrition, and watching seasonal anime.
+      Computer Science student at ASU building backend systems and cloud infrastructure with a focus on serverless architectures, infrastructure as code, and reliable APIs. I enjoy turning personal interests into production-grade projects. Outside of coding, I'm into language learning, fitness, nutrition, and watching seasonal anime.
     </p>
   </section>
 
@@ -47,46 +85,47 @@
 
     <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
 
-      <!-- Project 1 -->
+      <!-- Project 1: Serverless Portfolio -->
       <div class="bg-[#4a3b3b] p-6 rounded-lg shadow-lg hover:shadow-xl transition">
         <h3 class="text-2xl font-bold mb-2">Serverless Personal Portfolio</h3>
         <p class="text-[var(--text-creamy)] mb-4">
-          Static website hosted on AWS S3 + CloudFront with backend logic in Lambda. Deployed using Terraform (IaC). 
+          Static website hosted on AWS S3 + CloudFront with visitor counter using Lambda + DynamoDB. Deployed using Terraform (IaC) with CI/CD via GitHub Actions.
         </p>
-        <a href="https://github.com/hasansyedCS/hasansyed.dev" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository</a>
+        <a href="https://github.com/hasansyedCS/hasansyed.dev" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository →</a>
       </div>
 
-      <!-- Project 2 -->
+      <!-- Project 2: LinkLynx URL Shortener -->
       <div class="bg-[#4a3b3b] p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-        <h3 class="text-2xl font-bold mb-2">Backend API Project</h3>
+        <h3 class="text-2xl font-bold mb-2">LinkLynx – URL Shortener</h3>
         <p class="text-[var(--text-creamy)] mb-4">
-          RESTful API deployed on AWS with DynamoDB backend, Lambda functions, and serverless architecture.
+          REST API with FastAPI, PostgreSQL, Redis, and Docker. Containerized and targeting AWS ECS Fargate deployment with Terraform.
         </p>
-        <a href="#" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository</a>
+        <a href="https://github.com/hasansyedCS/LinkLynx" target="_blank" class="text-[var(--accent-blue)] hover:underline">View Repository →</a>
       </div>
-
-      <!-- Project 3 -->
-      
 
     </div>
   </section>
 
   <!-- SKILLS SECTION -->
-<section id="skills" class="py-20 px-6 max-w-5xl mx-auto text-center">
-  <h2 class="text-3xl font-semibold mb-8">Skills</h2>
-  <div class="flex flex-wrap justify-center gap-4">
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">AWS</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">S3</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">CloudFront</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Python</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Lambda</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">DynamoDB</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Terraform</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Git</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">GitHub</span>
-    <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">CI/CD</span>
-  </div>
-</section>
+  <section id="skills" class="py-20 px-6 max-w-5xl mx-auto text-center">
+    <h2 class="text-3xl font-semibold mb-8">Skills</h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">AWS</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">S3</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">CloudFront</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Lambda</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">DynamoDB</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">API Gateway</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Python</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Terraform</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Docker</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">PostgreSQL</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Redis</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">Git</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">GitHub Actions</span>
+      <span class="bg-[#4a3b3b] text-[var(--text-creamy)] px-4 py-2 rounded-full shadow-sm hover:shadow-lg transition">CI/CD</span>
+    </div>
+  </section>
 
   <!-- RESUME SECTION -->
   <section id="resume" class="py-20 px-6 text-center">
@@ -109,5 +148,7 @@
     &copy; 2026 Hasan Syed. All rights reserved.
   </footer>
 
+  <!-- JavaScript -->
+  <script src="script.js"></script>
 </body>
 </html>

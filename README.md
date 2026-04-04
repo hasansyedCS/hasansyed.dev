@@ -73,6 +73,6 @@ graph TD
 
 ## Connect
 
-- Live: [https://hasansyed.dev](https://hasansyed.dev)
+- Portfolio: [https://hasansyed.dev](https://hasansyed.dev)
 - GitHub: [https://github.com/hasansyedCS](https://github.com/hasansyedCS)
 - LinkedIn: [https://linkedin.com/in/hasansyedCS](https://linkedin.com/in/hasansyedCS)
