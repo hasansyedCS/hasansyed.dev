@@ -19,7 +19,7 @@ This is my personal portfolio and cloud resume project. It's a fully serverless 
 - Uses CloudFront for global CDN caching and HTTPS
 - Implements a **visitor counter** via API Gateway, Lambda (Python), and DynamoDB
 - Is managed entirely as **infrastructure as code** with Terraform
-- Automatically deploys on every `git push` using GitHub Actions
+- Automatically deploys on every `git push` using GitHub Actions (CI/CD Pipeline)
 
 The site is secure (no public S3 access), fast (sub-100ms latency), and costs less than $0.50/month to operate.
 
